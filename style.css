@@ -3,6 +3,7 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
 html {
 	font-size: 10px;
 	font-family: 'futura-pt-bold', sans-serif;
@@ -12,6 +13,7 @@ html {
 a {
 	text-decoration: none;
 }
+
 .container {
 	min-height: 100vh;
 	width: 100%;
@@ -21,12 +23,19 @@ a {
 }
 
 /*Main title and plants animation on Main page*/
+#main {
+    background-color: white;
+	background-size: cover;
+	background-position: top center;
+	/*position: relative*/
+	z-index: 1;
+}
+
 #title {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-
 	min-height: 100vh;
 	width: 100vw;
 }
@@ -42,56 +51,57 @@ a {
 	justify-content: center;
 }
 
-#temperatures_img, #impact_img{
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
-	padding: 30px;
-}
-
 svg{
     height: 500px;
 	width: 500px;
 }
 
-img {
-	height: 100%;
-	width: 100%;
-    object-fit: cover;
+#learnmore{
+	text-align: justify;
 }
 
-p {
-	color: black;
-	font-family: "Helvetica";
-	font-weight: lighter;
-	font-size: 1.4rem;
-	margin-top: 5px;
-	line-height: 2.5rem;
-	font-weight: 300;
-	letter-spacing: .05rem;
-}
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left:0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
 
-h1{
-	font-family: "futura-pt-bold";
-}
-
-h2{
-	font-family: "futura-pt-bold";
-}
-
-.section-title {
-	font-size: 4rem;
-	font-weight: 300;
-	color: black;
-	margin-bottom: 10px;
-	text-transform: uppercase;
-	letter-spacing: .2rem;
-	text-align: center;
-	padding-top: 9vh;
-}
-.section-title span  {
-	color: #ffa033;
-}
+  button{
+	  margin-top:5%;
+	  font-family: 'futura-pt-bold';
+  }
 
 .cta {
 	display: inline-block;
@@ -109,13 +119,106 @@ h2{
 	background-color: #035177;
 }
 
+#main .main {
+	max-width: 1373px;
+	margin: 0 auto;
+	padding: 0 50px;
+	/*justify-content: flex-start;*/
+}
+
+/*Text animation DRIPSEA WORLD OF CHANGE*/
+#main h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal .5s ease forwards;
+	animation-delay: 1s;
+}
+
+#main h1:nth-child(1) {
+	animation-delay: 1s;
+}
+#main h1:nth-child(2) {
+	animation-delay: 2s;
+}
+#main h1:nth-child(3) {
+	animation: text_reveal_name .5s ease forwards;
+	animation-delay: 3s;
+}
+
+/*Animation for box*/
+#main h1 span {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 0;
+    background-color: #9cd2e7;
+	animation: text_reveal_box 1s ease;
+}
+#main h1:nth-child(1) span {
+	animation-delay: .5s;
+}
+#main h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
+#main h1:nth-child(3) span {
+	animation-delay: 2.5s;
+}
+
+/* Rising temperatures and Social impact*/
+#temperatures_img, #impact_img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	padding: 30px;
+}
+
+/*General settings for titles and text, images*/
+img {
+	height: 100%;
+	width: 100%;
+    object-fit: cover;
+}
+
+p {
+	color: black;
+	font-family: "Helvetica";
+	font-weight: lighter;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .05rem;
+}
+
+h1, h2{
+	font-family: "futura-pt-bold";
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+	padding-top: 9vh;
+}
+.section-title span  {
+	color: #ffa033;
+}
+
+/* Header section - navigation*/
 .brand{
     width:120px;
 	height:auto;
 	margin-left: 5%
 }
 
-/* Header section */
 #header {
 	position: fixed;
 	z-index: 1000;
@@ -251,15 +354,6 @@ h2{
 
 /* Hero Section */
 
-#nav {
-    background-color: white;
-	
-	background-size: cover;
-	background-position: top center;
-	/*position: relative*/
-	z-index: 1;
-}
-
 /*
 #hero::after {
 	content: '';
@@ -274,60 +368,7 @@ h2{
 }
 */
 
-#nav .nav {
-	max-width: 1373px;
-	margin: 0 auto;
-	padding: 0 50px;
-	/*justify-content: flex-start;*/
-}
-
-/*Text reveal sec DRIPSEA WORLD OF CHANGE*/
-#nav h1 {
-	display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: transparent;
-	animation: text_reveal .5s ease forwards;
-	animation-delay: 1s;
-}
-
-#nav h1:nth-child(1) {
-	animation-delay: 1s;
-}
-#nav h1:nth-child(2) {
-	animation-delay: 2s;
-}
-#nav h1:nth-child(3) {
-	animation: text_reveal_name .5s ease forwards;
-	animation-delay: 3s;
-}
-/* END Text reveal sec DRIPSEA WORLD OF CHANGE*/
-
-/*box text reveal*/
-#nav h1 span {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 0;
-    background-color: #9cd2e7;
-	animation: text_reveal_box 1s ease;
-}
-#nav h1:nth-child(1) span {
-	animation-delay: .5s;
-}
-#nav h1:nth-child(2) span {
-	animation-delay: 1.5s;
-}
-#nav h1:nth-child(3) span {
-	animation-delay: 2.5s;
-}
-/* END box text reveal*/
-
-/* End Hero Section */
-
-/* Services Section */
+/*  Marine life section */
 #marine .marine {
 	flex-direction: column;
 	text-align: justify;
@@ -335,29 +376,22 @@ h2{
 	margin: 0 auto;
 }
 
-.intro_marine{
+.intro_marine, .intro_impact, .intro_temperatures, .intro_improve{
 	font-family: "Helvetica";
 	font-weight: lighter;
 }
 
-.intro_temperatures, .intro_impact{
+.intro_temperatures, .intro_impact, .intro_improve{
 	max-width:1160px;
 	margin-bottom: 5%;
 }
-
-
 
 #first_subtopic, #second_subtopic{
 	font-size:20px;
 	color: #035177;
 }
 
-.endangered_animals{
-	max-width:1200px;
-	text-align: justify;
-	margin: 55px;
-}
-
+/*
 #articles_bears .articles_bears{
 	max-width: 1200px;
 }
@@ -370,14 +404,12 @@ h2{
 	margin-top: 5vh;
 }
 
-
 #articles_foxes .container {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 0;
 	margin-top: -25vh;
-	
 }
 
 #articles_walruses .container {
@@ -386,7 +418,6 @@ h2{
 	align-items: flex-start;
 	padding: 0;
 	margin-top: -25vh;
-	
 }
 
 #articles_seales .container {
@@ -395,7 +426,6 @@ h2{
 	align-items: flex-start;
 	padding: 0;
 	margin-top: -25vh;
-	
 }
 
 #polar_bear, #polar_foxes, #walruses, #seales{
@@ -461,7 +491,7 @@ h2{
 	max-width: 300px;
 	max-height: 280px;
 	margin: 20px;
-	/*padding:10px;*/
+	
 }
 
 .polar_bear2, .polar_foxes2{
@@ -490,7 +520,7 @@ h2{
 	margin-top: 2%;
 	margin-left: 2%;
 	text-align:justify
-}
+}*/
 
 #marine .marine-top {
 	max-width: 1260px;
@@ -539,10 +569,39 @@ h2{
 	margin-top: 60vh;
 }
 
-/* End Marine wilĺdlife Section */
+.endangered_animals{
+	max-width:1200px;
+	text-align: justify;
+	margin: 55px;
+}
 
-/* Projects section */
-#temperatures .temperatures , #impact .impact{
+.obrazky{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: -10%;
+}
+
+.fish_img{
+	width: 20%;
+	height: 20%;
+}
+
+.iceberg_img{
+	width: 90%;
+	height: 90%;
+}
+
+/* Marine life, Rising temperatures and social impact section */
+#temperatures .temperatures , #impact .impact, #trying .trying{
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 ;
+	text-align:justify;
+}
+
+#temperatures .temperatures, #trying .trying{
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -557,6 +616,14 @@ h2{
 	flex-direction: column;
 	width: 97%;
 }
+
+#trying .all-projects{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 120%;
+}
 #temperatures .temperatures-item, #impact .impact-item {
 	display: flex;
 	align-items: center;
@@ -567,7 +634,20 @@ h2{
 	overflow: hidden;
 	border-radius: 10px;
 }
-#temperatures .temperatures-info, #impact .impact-info {
+
+#trying .trying-item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 10px;
+	margin-top: 5%;
+}
+
+#temperatures .temperatures-info, #impact .impact-info, #trying .trying-info {
 	padding: 30px;
 	flex-basis: 50%;
 	height: 100%;
@@ -579,6 +659,30 @@ h2{
 	color: white;
 }
 
+/*
+#trying .trying-info{
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: center;
+	background-color:#035177;
+	color:black;
+	
+}*/
+
+.trying-info2{
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: center;
+	background-color:#9cd2e7;
+}
 
 #temperatures .temperatures-info h2, #impact .impact-info h2{
 	font-size: 1.8rem;
@@ -587,18 +691,45 @@ h2{
 	color:  #ffa033;
 }
 
+.trying-info h2{
+	color: #ffa033;
+	font-size: 17px;
+}
+
+.trying-info2 h2{
+	color:#035177;
+	font-size: 17px;
+}
+
 #link{
 	color:#9cd2e7;
 }
+
+#link2{
+	color:#035177;
+}
+
 #temperatures .temperatures-info p, #impact .impact-info p {
 	color: white;
 }
+
+#trying .trying-info p, #impact .impact-info p {
+	color: white;
+}
+
+.tryingtitle{
+	margin-top: 7%;
+	margin-bottom: -5vh;
+	text-align: center;
+	font-size: 40px;
+	color: #ffa033;
+}
+
 #temperatures .temperatures-img , #impact .impact-img{
 	flex-basis: 50%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
-	
 }
 
 /*
@@ -612,56 +743,48 @@ h2{
 	
 	opacity: .7;
 }*/
+
 #temperatures .temperatures-img img, #impact .impact-img img {
 	transition: .3s ease transform;
 }
 #temperatures .temperatures-item:hover .temperatures-img img, #impact .impact-item:hover .impact-img img {
 	transform: scale(1.1);
 }
-/* End Projects section */
+/* End Subpages section */
 
-/* contact Section */
-#contact .contact {
+/* What can I do? Section */
+#improving{
+	color: #035177;
+	text-align: left;
+	font-size: 17px;
+}
+
+#improve .improve {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
 }
-#contact .contact-items {
+#improve .improve-items {
 	width: 400px;
 }
-#contact .contact-item {
+#improve .improve-item {
 	width: 80%;
 	padding: 20px;
-	text-align: center;
+	text-align: justify;
 	border-radius: 10px;
 	padding: 30px;
 	margin: 30px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	flex-direction: column;
 	box-shadow: 0px 0px 18px 0 #0000002c;
 	transition: .3s ease box-shadow;
 }
-#contact .contact-item:hover {
+#improve .improve-item:hover {
 	box-shadow: 0px 0px 5px 0 #0000002c;
 }
-#contact .icon {
-	width: 70px;
-	margin: 0 auto;
-	margin-bottom: 10px;
-}
-#contact .contact-info h1 {
-	font-size: 2.5rem;
-	font-weight: 500;
-	margin-bottom: 5px;
-}
-#contact .contact-info h2 {
-	font-size: 1.3rem;
-	line-height: 2rem;
-	font-weight: 500;
-}
-/*End contact Section */
+
+/*End what can I do? Section */
 
 /* Footer */
 #footer {
@@ -670,8 +793,9 @@ h2{
 #footer .footer {
 	min-height: 200px;
 	flex-direction: column;
-	padding-top: 50px;
+	padding-top: 30px;
 	padding-bottom: 10px;
+	text-align: center;
 }
 #footer h2 {
 	color: white;
@@ -681,29 +805,65 @@ h2{
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-#footer .social-icon {
-	display: flex;
-	margin-bottom: 30px;
-}
-#footer .social-item {
-	height: 50px;
-	width: 50px;
-	margin: 0 5px;
-}
-#footer .social-item img {
-	filter: grayscale(1);
-	transition: .3s ease filter;
-}
-#footer .social-item:hover img {
-	filter: grayscale(0);
-}
+
 #footer p {
 	color: white;
 	font-size: 1.3rem;
+	max-width: 1100px;
+}
+
+#footerp{
+	font-family: 'futura-pt-bold';
 }
 /* End Footer */
 
-/* Animation for hamburger*/
+/* Animation for hamburger and for main title on main page*/
+/* All keyframes for animations*/
+@keyframes list{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(1deg);
+    }
+}
+
+@keyframes list2{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translate(5%);  
+    }
+}
+
+@keyframes list3{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(2%);
+    }
+}
+
+@keyframes list4{
+    from{
+        transform: translateX(5%);
+    }
+    to{
+        transform: translate(0%);
+    }
+}
+
+@keyframes list5{
+    from{
+        transform: translateX(-1%);
+    }
+    to{
+        transform: translate(0%);
+    }
+}
+
 @keyframes hamburger_puls {
 	0% {
 		opacity: 1;
@@ -748,7 +908,7 @@ h2{
 	}
 
 	/* Hero */
-	#nav h1 {
+	#main h1 {
 		font-size: 7rem;
 	}
 	/* End Hero */
@@ -764,6 +924,7 @@ h2{
 	#temperatures .temperatures-item , #impact .impact-item{
 		flex-direction: row;
 	}
+
 	#temperatures .temperatures-item:nth-child(even), #impact .impact-item:nth-child(even)  {
 		flex-direction: row-reverse;
 	}
@@ -782,35 +943,35 @@ h2{
 	/* End Project */
 
 	/* contact  */
-	#contact .contact {
+	#improve .improve {
 		flex-direction: column;
 		padding: 100px 0;
 		align-items: center;
 		justify-content: center;
 		min-width: 20vh;
 	}
-	#contact .contact-items {
+	#improve .improve-items {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
 		margin: 0;
 	}
-	#contact .contact-item {
+	#improve .improve-item {
 		width: 30%;
 		margin: 0;
 		flex-direction: row;
 	}
-	#contact .contact-item .icon {
+	#improve .improve-item .icon {
 		height: 100px;
 		width: 100px;
 	}
-	#contact .contact-item .icon img {
+	#improve .improve-item .icon img {
 		object-fit: contain;
 	}
-	#contact .contact-item .contact-info {
+	#improve .improve-item .improve-info {
 		width: 100%;
-		text-align: left;
+		text-align: justify;
 		padding-left: 20px;
 	}
 	/* End contact  */
@@ -848,10 +1009,7 @@ h2{
 }
 /* End  Media Query For Desktop */
 
-
-
-
-/* PLANTS ANIMATION */
+/* PLANTS AND ICEBERG ANIMATION */
 .st1, .st8, .st9, .st10, .st4, .st2, .st10, .st17, .st11, .st12 {
     animation: list 2s ease-in-out infinite alternate;
 }
@@ -868,59 +1026,33 @@ h2{
     animation: list3 2s ease-in-out infinite alternate;
 }
 
+polygon{
+	animation: list 2s ease-in-out infinite alternate;
+  }
+
 .st14, .st15 ,.st16{
     animation: list4 2s ease-in-out infinite alternate;
 }
 
-@keyframes list{
-    from{
-        transform: rotateZ(0deg);
-    }
-    to{
-        transform: rotateZ(1deg);
-    }
-}
-
-@keyframes list2{
-    from{
-        transform: translateX(0%);
-    }
-    to{
-        transform: translate(5%);  
-    }
-}
-
-@keyframes list3{
-    from{
-        transform: translateY(0%);
-    }
-    to{
-   
-        transform: translateY(2%);
-    }
-}
-
-@keyframes list4{
-    from{
-        transform: translateX(5%);
-    }
-    to{
-        transform: translate(0%);
-    }
-}
-
-@keyframes list5{
-    from{
-        transform: translateX(-1%);
-    }
-    to{
-        transform: translate(0%);
-    }
-}
-
-
 /*Media queries for mobile device*/
 @media (max-width: 800px) {
+	.obrazky{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.iceberg_img{
+		width: 100%;
+		height:90%;
+		padding: 10%;
+		margin-left: 5%;
+	}
+
+	.fish_img{
+		display: none;
+	}
+
 	html {
 		font-size: 10px;
 		font-family: 'futura-pt-bold', sans-serif;
@@ -981,6 +1113,14 @@ h2{
 		margin-top: 2%;
 	}
 
+	#trying .trying{
+		flex-direction: column;
+		max-width: 310px;
+		margin: 0 auto;
+		padding: 0 ;
+		text-align:justify;
+	}
+
 	#marine .service-item {
 		display: flex;
 		justify-content: center;
@@ -1008,61 +1148,7 @@ h2{
 		margin: 40px;
 	}
 
-
-	/* Articles*/
-	.polarbear-title {
-		margin-left: 10vw;
-		font-size: 20px;
-		color: #ffa033;
-	}
-
-	#polarbear_importance,  #polarfoxes_importance, #walruses_importance, #seales_importance{
-		color: #035177;
-		margin-top: -60px;
-		font-size: 16px;
-	}
-
-	#polar_bear, #polar_foxes, #walruses, #seales{
-		display:flex;
-		flex-direction: column;
-		margin-top: 7vh;
-		margin-left: 5vh;
-	}
-
-	.polar_bear1, .polar_foxes1, .walruses1, .seales1 {
-		border-width: 2px;
-		border-radius: 60px;
-		border-style: solid;
-		border-color: #035177;
-		max-width: 300px;
-		max-height: 280px;
-		margin: 20px;
-		padding: 10px;
-		margin-left: -1px;
-	}
-
-	.polar_bear2, .seales2 {
-		max-width: 300px;
-		margin-top: 2%;
-		margin-left: 2%;
-		text-align: justify;
-	}
-
-	.polarfoxes-title, .walruses-title, .seales-title {
-		margin-left: 10vw;
-		font-size: 20px;
-		color: #ffa033;
-		margin-top: 50%;
-	}
-
-	.polar_foxes2 , .walruses2{
-		max-width: 300px;
-		margin-top: 7%;
-		margin-left: 2%;
-		text-align: justify;
-	}
-
-	/* Rising temperatures*/
+	/* Rising temperatures and social impact*/
 	.intro_temperatures{
 		max-width:300px;
 		margin-left: 10%;
@@ -1075,6 +1161,12 @@ h2{
 		text-align: justify;
 	}
 
+	.intro_improve{
+		max-width: 300px;
+		margin-left: 5%;
+		text-align: justify;
+	}
+	
 	#temperatures .temperatures-img, #impact .impact-img {
 		flex-basis: 50%;
 		height: 300px;
@@ -1092,66 +1184,28 @@ h2{
 		margin-top: -10%;
 	}
 
-	/* Social impact */
-	#about .about {
-		flex-direction: column-reverse;
-		text-align: center;
-		max-width: 1200px;
-		margin-top: -40%;
-	}
-
 	#title_impact{
-		margin-top: -30%;
+		margin-top: -20%;
 	}
 
 	/*Footer*/
-	footer p {
+	#footer p {
 		color: white;
-		font-size: 10px;
-	}	
+		font-size: 0.8rem;
+		text-align: center;
+		max-width: 330px;
+		line-height: 2.2;
+	}
 
-	
+	#footerp{
+		font-family: 'futura-pt-bold';
+	}
+
+	.tryingtitle {
+		margin-top: 15%;
+		margin-bottom: 5vh; 
+		margin-left: 4vw;
+		font-size: 40px;
+		color: #ffa033;
+	}
 }
-
-.modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-	background-color: #fefefe;
-	margin: auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
-  }
-  
-  /* The Close Button */
-  .close {
-	color: #aaaaaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
-  }
-
-  button{
-	  margin-top:5%;
-	  font-family: 'futura-pt-bold';
-  }
