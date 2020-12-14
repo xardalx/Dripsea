@@ -1,5 +1,5 @@
 # Dripsea
-1st semester final project
+
 This reposatory is for our 1st semester final exam project. The site is dedicated to simplifying complicated climate science for the younger generation,
 through the use of illustrations and simple explanatory text, combined with links to further research when appropriate. 
 ...
