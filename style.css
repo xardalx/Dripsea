@@ -80,7 +80,7 @@ svg{
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%;
+	width: 40%;
   }
   
   /* The Close Button */
@@ -120,7 +120,7 @@ svg{
 }
 
 #main .main {
-	max-width: 1373px;
+	/*max-width: 1373px;*/
 	margin: 0 auto;
 	padding: 0 50px;
 	/*justify-content: flex-start;*/
@@ -169,7 +169,7 @@ svg{
 }
 
 /* Rising temperatures and Social impact*/
-#temperatures_img, #impact_img{
+#temperatures_img, #impact_img, #trying-img{
 	height: 100%;
 	width: 100%;
 	object-fit: contain;
@@ -208,7 +208,18 @@ h1, h2{
 	text-align: center;
 	padding-top: 9vh;
 }
-.section-title span  {
+
+.section-title2 {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+
+.section-title span, .section-title2 span  {
 	color: #ffa033;
 }
 
@@ -372,159 +383,31 @@ h1, h2{
 #marine .marine {
 	flex-direction: column;
 	text-align: justify;
-	max-width: 1200px;
+	max-width: 95%;
 	margin: 0 auto;
 }
 
 .intro_marine, .intro_impact, .intro_temperatures, .intro_improve{
 	font-family: "Helvetica";
 	font-weight: lighter;
+	max-width: 112vh;
+	text-align: justify;
 }
 
 .intro_temperatures, .intro_impact, .intro_improve{
-	max-width:1160px;
+	max-width:112vh;
 	margin-bottom: 5%;
 }
 
 #first_subtopic, #second_subtopic{
-	font-size:20px;
+	font-size:17px;
 	color: #035177;
 }
 
-/*
-#articles_bears .articles_bears{
-	max-width: 1200px;
-}
-
-#articles_bears .container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 0;
-	margin-top: 5vh;
-}
-
-#articles_foxes .container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 0;
-	margin-top: -25vh;
-}
-
-#articles_walruses .container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 0;
-	margin-top: -25vh;
-}
-
-#articles_seales .container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 0;
-	margin-top: -25vh;
-}
-
-#polar_bear, #polar_foxes, #walruses, #seales{
-	display:flex;
-	flex-direction: row;
-	margin-top: 5vh;
-	margin-left: 5vh;
-}
-
-#polarbear_importance, #polarfoxes_importance, #walruses_importance, #seales_importance{
-	color:  #035177;
-	margin-top: -40px;
-	font-size: 16px;
-}
-
-.foxtext{
-	margin-top: 30vh;
-}
-
-.walrustext{
-	margin-top: 10vh;
-}
-
-#polarbear_text, #foxes_text, #seales_text, #walruses_text{
-	text-align: center;
-	font-size: 15px;
-	margin: 4vh;
-	margin-top: 5vh;
-}
-
-.polarbear-title{
-	margin-left:4vw;
-	font-size: 40px;
-	color: #ffa033;
-}
-
-.polarfoxes-title{
-	margin-left:4vw;
-	font-size: 40px;
-	color: #ffa033;
-	margin-top: 2%;
-}
-
-.walruses-title{
-	margin-left:4vw;
-	font-size: 40px;
-	color: #ffa033;
-	margin-top: 4%;
-}
-
-.seales-title{
-	margin-left:4vw;
-	font-size: 40px;
-	color: #ffa033;
-	margin-top: 6%;
-}
-
-.polar_bear1, .polar_foxes1, .walruses1, .seales1{
-	border-width: 2px;
-	border-radius: 60px;
-	border-style: solid;
-	border-color: #035177;
-	max-width: 300px;
-	max-height: 280px;
-	margin: 20px;
-	
-}
-
-.polar_bear2, .polar_foxes2{
-	max-width: 1260px;
-	margin-top: 2%;
-	margin-left: 2%;
-	text-align:justify
-}
-
-.polar_foxes2{
-	max-width: 830px;
-	margin-top: 7%;
-	margin-left: 2%;
-	text-align:justify
-}
-
-.walruses2{
-	max-width: 830px;
-	margin-top: 7%;
-	margin-left: 2%;
-	text-align:justify
-}
-
-.seales2{
-	max-width: 830px;
-	margin-top: 2%;
-	margin-left: 2%;
-	text-align:justify
-}*/
-
 #marine .marine-top {
-	max-width: 1260px;
+	/*max-width: 1260px;*/
 	margin: 30px;
+	text-align: center;
 }
 #marine .marine-bottom {
 	display: flex;
@@ -569,17 +452,28 @@ h1, h2{
 	margin-top: 60vh;
 }
 
+/*
 .endangered_animals{
 	max-width:1200px;
 	text-align: justify;
 	margin: 55px;
+	max-width: 45%;
 }
 
-.obrazky{
+#endangered_animals{
+	display:flex;
+	flex-direction: row;	
+
+}*/
+
+.mountain{
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
-	margin-bottom: -10%;
+	flex-direction: row;
+}
+
+.mountain img{
+	width: 80vh;
 }
 
 .fish_img{
@@ -595,15 +489,7 @@ h1, h2{
 /* Marine life, Rising temperatures and social impact section */
 #temperatures .temperatures , #impact .impact, #trying .trying{
 	flex-direction: column;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 ;
-	text-align:justify;
-}
-
-#temperatures .temperatures, #trying .trying{
-	flex-direction: column;
-	max-width: 1200px;
+	max-width: 95%;
 	margin: 0 auto;
 	padding: 0 ;
 	text-align:justify;
@@ -615,6 +501,7 @@ h1, h2{
 	justify-content: center;
 	flex-direction: column;
 	width: 97%;
+	margin-top: 3%;
 }
 
 #trying .all-projects{
@@ -623,6 +510,7 @@ h1, h2{
 	justify-content: center;
 	flex-direction: column;
 	width: 120%;
+	margin-top: -2%;
 }
 #temperatures .temperatures-item, #impact .impact-item {
 	display: flex;
@@ -639,7 +527,7 @@ h1, h2{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: row;
 	width: 80%;
 	margin: 20px auto;
 	overflow: hidden;
@@ -659,6 +547,18 @@ h1, h2{
 	color: white;
 }
 
+
+.fish-info{
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: center;
+	background-color:#9cd2e7;
+	color: black;
+}
 /*
 #trying .trying-info{
 	padding: 30px;
@@ -673,16 +573,6 @@ h1, h2{
 	
 }*/
 
-.trying-info2{
-	padding: 30px;
-	flex-basis: 50%;
-	height: 100%;
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	justify-content: center;
-	background-color:#9cd2e7;
-}
 
 #temperatures .temperatures-info h2, #impact .impact-info h2{
 	font-size: 1.8rem;
@@ -696,10 +586,7 @@ h1, h2{
 	font-size: 17px;
 }
 
-.trying-info2 h2{
-	color:#035177;
-	font-size: 17px;
-}
+
 
 #link{
 	color:#9cd2e7;
@@ -725,11 +612,15 @@ h1, h2{
 	color: #ffa033;
 }
 
-#temperatures .temperatures-img , #impact .impact-img{
+#temperatures .temperatures-img , #impact .impact-img, #trying .trying-img{
 	flex-basis: 50%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
+}
+
+.temperatures-header, .impact-header{
+	max-width: 120vh;
 }
 
 /*
@@ -744,10 +635,10 @@ h1, h2{
 	opacity: .7;
 }*/
 
-#temperatures .temperatures-img img, #impact .impact-img img {
+#temperatures .temperatures-img img, #impact .impact-img img, #trying .trying-img img {
 	transition: .3s ease transform;
 }
-#temperatures .temperatures-item:hover .temperatures-img img, #impact .impact-item:hover .impact-img img {
+#temperatures .temperatures-item:hover .temperatures-img img, #impact .impact-item:hover .impact-img img, #trying .trying-item:hover .trying-img img{
 	transform: scale(1.1);
 }
 /* End Subpages section */
@@ -761,12 +652,18 @@ h1, h2{
 
 #improve .improve {
 	flex-direction: column;
-	max-width: 1200px;
+	max-width: 95%;
 	margin: 0 auto;
-}
+	padding: 0;
+} 	
 #improve .improve-items {
 	width: 400px;
 }
+
+.improve-img2{
+	width:90%;
+}
+
 #improve .improve-item {
 	width: 80%;
 	padding: 20px;
@@ -809,7 +706,7 @@ h1, h2{
 #footer p {
 	color: white;
 	font-size: 1.3rem;
-	max-width: 1100px;
+	max-width: 90%;
 }
 
 #footerp{
@@ -903,7 +800,7 @@ h1, h2{
 		font-size: 2.5rem;
 		padding: 20px 60px;
 	}
-	h1.section-title {
+	h1.section-title, h1.section-title2 {
 		font-size: 6rem;
 	}
 
@@ -915,13 +812,13 @@ h1, h2{
 
 	/* Services Section */
 	#marine .marine-bottom .service-item {
-		flex-basis: 45%;
+	/*	flex-basis: 45%; */
 		margin: 2.5%;
 	}
 	/* End Services Section */
 
 	/* Project */
-	#temperatures .temperatures-item , #impact .impact-item{
+	#temperatures .temperatures-item , #impact .impact-item, #zzzzzzz{
 		flex-direction: row;
 	}
 
@@ -1035,8 +932,8 @@ polygon{
 }
 
 /*Media queries for mobile device*/
-@media (max-width: 800px) {
-	.obrazky{
+@media only screen and (max-width: 768px) {
+	.mountain{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -1117,6 +1014,18 @@ polygon{
 		text-align:justify;
 	}
 
+	#trying .trying-item{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 80%;
+		margin: 20px auto;
+		overflow: hidden;
+		border-radius: 10px;
+		margin-top: 5%;
+	}
+
 	#marine .service-item {
 		display: flex;
 		justify-content: center;
@@ -1138,10 +1047,10 @@ polygon{
 		margin-top: 23vh;
 	}
 
-	.endangered_animals {
-		max-width: 1200px;
+	.endangered_animals {	
 		text-align: justify;
 		margin: 40px;
+		
 	}
 
 	/* Rising temperatures and social impact*/
@@ -1162,6 +1071,10 @@ polygon{
 		margin-left: 5%;
 		text-align: justify;
 	}
+
+	#improve .improve-items{
+		width:100%;
+	}
 	
 	#temperatures .temperatures-img, #impact .impact-img {
 		flex-basis: 50%;
@@ -1173,7 +1086,7 @@ polygon{
 
 	#temperatures .temperatures, #impact .impact {
 		flex-direction: column;
-		max-width: 1200px;
+		max-width: 95%;
 		margin: 0 auto;
 		padding: 0;
 		text-align: justify;
@@ -1204,4 +1117,14 @@ polygon{
 		font-size: 40px;
 		color: #ffa033;
 	}
+
+	.modal{
+		width:90%;
+	}
+
+	.modal-content {
+		width:100%;
+	}
+
+	
 }
