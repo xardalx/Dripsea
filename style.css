@@ -635,10 +635,10 @@ h1, h2{
 	opacity: .7;
 }*/
 
-#temperatures .temperatures-img img, #impact .impact-img img, #trying .trying-img img {
+#temperatures .temperatures-img img, #impact .impact-img img, #trying .trying-img img, #improve .improve-img, #improve .improve-img2 {
 	transition: .3s ease transform;
 }
-#temperatures .temperatures-item:hover .temperatures-img img, #impact .impact-item:hover .impact-img img, #trying .trying-item:hover .trying-img img{
+#temperatures .temperatures-item:hover .temperatures-img img, #impact .impact-item:hover .impact-img img, #trying .trying-item:hover .trying-img img, #improve .improve-item:hover .improve-img img, #improve .improve-item:hover .improve-img2 img {
 	transform: scale(1.1);
 }
 /* End Subpages section */
@@ -661,7 +661,7 @@ h1, h2{
 }
 
 .improve-img2{
-	width:90%;
+	width:85%;
 }
 
 #improve .improve-item {
